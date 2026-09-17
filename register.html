@@ -1,0 +1,6 @@
+{% extends "base.html" %}{% block title %}Register | Workforce Hub{% endblock %}{% block content %}
+<section class="auth-card register-card"><div class="auth-icon">WH</div><h1>Create account</h1><p>Register to access the Employee Management System.</p>
+<form method="post" class="form-grid one">{% csrf_token %}
+{% for field in form %}<label>{{ field.label }}{{ field }}{% if field.help_text %}<small class="help">{{ field.help_text|safe }}</small>{% endif %}{% for error in field.errors %}<small class="error">{{ error }}</small>{% endfor %}</label>{% endfor %}
+<button class="btn primary" type="submit">Create account</button></form>
+<p class="auth-switch">Already registered? <a href="{% url 'login' %}">Sign in</a></p></section>{% endblock %}

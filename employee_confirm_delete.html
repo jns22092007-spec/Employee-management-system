@@ -1,0 +1,2 @@
+{% extends "base.html" %}{% block content %}<section class="confirm-card"><div class="warning">!</div><h1>Delete employee?</h1><p>You are about to permanently delete <strong>{{ object.full_name }}</strong> ({{ object.employee_id }}). This action cannot be undone.</p><form method="post">{% csrf_token %}<a class="btn light" href="{% url 'employee-list' %}">Cancel</a><button class="btn danger-bg">Delete permanently</button></form></section>{% endblock %}
+
